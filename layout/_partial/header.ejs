@@ -1,0 +1,58 @@
+<link rel='stylesheet' id='argon_css_merged-css'  href='https://cdn.jsdelivr.net/gh/solstice23/argon-theme@0.999.beta.3/assets/argon_css_merged.css?ver=0.999.beta.3' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='https://cdn.jsdelivr.net/gh/solstice23/argon-theme@0.999.beta.3/style.css?ver=0.999.beta.3' type='text/css' media='all' />
+<link rel='stylesheet' id='googlefont-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%7CNoto+Serif+SC%3A300%2C600&#038;display=swap&#038;ver=5.5' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://solstice23.top/wp-includes/css/dist/block-library/style.min.css?ver=5.5' type='text/css' media='all' />
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/solstice23/argon-theme@0.999.beta.3/assets/argon_js_merged.js?ver=0.999.beta.3' id='argon_js_merged-js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/solstice23/argon-theme@0.999.beta.3/assets/js/argon.min.js?ver=0.999.beta.3' id='argonjs-js'></script>
+
+<header id="header">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light bg-primary headroom--not-bottom headroom--not-top headroom--pinned" style="background-color: rgba(var(--toolbar-color), 0.799737 !important;">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-band" href="<%- url_for() %>"><%= config.title %></a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar_global">
+            <div class="navbar-collapse-header">
+                <div class="row">
+                    <div class="col-6 collapse-brand"></div>
+                    <div class="col-6 collapse-close">
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <ul id="navbar_search_btn_mobile" class="navbar-nav align-items-lg-center ml-lg-auto">
+                <li class="nav-item" data-toggle="modal" data-target="#argon_search_modal" style="padding-left: 5px;">
+                    <a id="nav-search-btn" class="nav-icon" title="<%= __('search') %>">
+                    <i class="fa fa-search"></i>
+                    <span class="nav-link-inner--text d-lg-none">搜索</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                <% for (var i in theme.menu){ %>
+                <li class="nav-item">
+                    <a href="<%- url_for(theme.menu[i]) %>" class="nav-link" target="" title="">
+                    <i class="ni ni-book-bookmark d-lg-none"></i>
+                    <span class="nav-link-inner--text"><%= i %></span>
+                    </a>
+                </li>
+                <% } %>
+            </ul>
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+                        <li id="navbar_search_container" class="nav-item" data-toggle="modal">
+                            <div id="navbar_search_input_container">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                    </div>
+                                    <input id="navbar_search_input" class="form-control" placeholder="搜索什么..." type="text" autocomplete="off">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+    </div>
+  </div>
+</header>
