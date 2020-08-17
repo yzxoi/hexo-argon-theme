@@ -18,12 +18,39 @@
 	<title><% if(title){ %><%= title %> | <% } %><%= config.title %></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="theme-color-rgb" content="<%= theme.color_rgb %>">
+	<meta name="theme-color" content="#<%= theme.color %>">
+	<meta name="theme-color-origin" content="#<%= theme.color_origin %>">
+	<meta name="theme-card-radius" content="7.50">
+	<meta name="theme-card-radius-origin" content="4">
+	<meta name="theme-version" content="<%= theme.version %>">
 	<% if(theme.favicon){ %>
 		<%- favicon_tag(theme.favicon) %>
 	<% } %>
+	<%- css('css/dashicons.min.css') %>
 	<%- css('css/argon_css_merged.css') %>
 	<%- css('css/style.css') %>
-	<%- css('css/style.min.css') %>
-	<%- js('js/argon.min.js') %>
+	<%- css('font-awesome/css/font-awesome.min.css') %>
+	<%- css('//fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%7CNoto+Serif+SC%3A300%2C600&display=swap&ver=5.5') %>
+	<%- js('js/jquery.js') %>
+	<%- js('https://www.googletagmanager.com/gtag/js?id=UA-161930987-1') %>
 	<%- js('js/argon_js_merged.js') %>
+	<%- js('js/argon.min.js') %>
 </head>
+<style id="themecolor_css">
+		:root{
+		--themecolor: #<%= theme.color %>;
+		--themecolor-dark0: #FA668F;
+		--themecolor-dark: #F95986;
+		--themecolor-dark2: #F84174;
+		--themecolor-dark3: #F72862;
+		--themecolor-light: #FCA3BC;
+		--themecolor-rgbstr: <%= theme.color_rgb %>;
+		--themecolor-gradient: linear-gradient(150deg,var(--themecolor-light) 15%, var(--themecolor) 70%, var(--themecolor-dark0) 94%);
+
+	}
+</style>
+<style id="theme_cardradius_css">
+	:root{
+		--card-radius: 7.50px;
+	}
+</style>

@@ -3,14 +3,28 @@ menu:
   Home: /
   Archives: /archives
 banner: "images/banner.jpg"
-
+banner_title_typing_effect: true
+banner_typing_effect_interval: 
+banner_title: yzxoi
+banner_subtitle: 
+banner_background_url: 
+page_background_url: https://cdn.jsdelivr.net/gh/yzx1798106406/image@1.2.0/light.webp
+page_background_opacity: 
+page_background_banner_style: 
+page_background_dark_url: 
+show_toolbar_mask: true
 # Content
 excerpt_link: Read More
 fancybox: true
 recent_posts_limits: 5
 
 # Sidebar
-sidebar: right
+announcement: 
+sidebar_banner_title: 
+sidebar_subtitle: hitokoto
+sidebar_menu:
+  <i class="fa fa-home"></i>Home: /
+  <i class="fa fa-bookmark"></i>Archives: /archives
 widgets:
 - category
 - tag
@@ -30,8 +44,12 @@ show_count: false
 
 # Miscellaneous
 favicon: /favicon.png
-color_rgb: 94,114,228
-banner_text: yzxoi
+
+color: fa7298
+color_rgb: 250,114,152
+color_origin: fa7298
+
+
 
 # valine comment system. https://valine.js.org
 valine:
@@ -45,3 +63,5 @@ valine:
   lang: zh-cn # i18n: zh-cn/en
   placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
   guest_info: nick,mail,link #valine comment header info
+
+version: 0.01

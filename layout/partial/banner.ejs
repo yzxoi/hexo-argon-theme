@@ -1,5 +1,5 @@
 <section id="banner" class="banner section section-lg section-shaped">
-	<div class="shape shape-style-1 shape-primary">
+	<div class="shape <% if (theme.banner_hide_shapes == '') { shape-style-1 } %> shape-primary">
 		<span></span>
 		<span></span>
 		<span></span>
@@ -11,7 +11,97 @@
 		<span></span>
 	</div>
 	<div id="banner_container" class="banner-container container text-center">
-		<div class="banner-title text-white"><span class="banner-title-inner"><%= theme.banner_text %></span>
-		</div>
+		<% if (theme.banner_title_typing_effect == true) { %>
+			<div class="banner-title text-white" data-text="<% if (theme.banner_title) { %><%= theme.banner_title %><% } else { %><%= config.title %><% } %>" data-interval="<% if (theme.banner_typing_effect_interval) { %><%= theme.banner_typing_effect_interval %><% } else { %>100<% } %>"><span class="banner-title-inner">&nbsp;</span>
+		<% } else { %>
+			<div class="banner-title text-white"><span class="banner-title-inner">
+				<% if (theme.banner_title) { %>
+					<%= theme.banner_title %>
+				<% } else { %>
+					<%= config.title %>
+				<% } %>
+			</span>
+		<% } %>
+				<% if (theme.banner_subtitle) { %>
+					<span class="banner-subtitle d-block"><%= theme.banner_subtitle %></span>
+				<% } %>
+			</div>
 	</div>
+	<% if (theme.banner_background_url) { %>
+		<style>
+			section.banner{
+				background-image: url(<%= theme.banner_background_url %>) !important;
+			}
+		</style>
+	<% } %>
 </section>
+<% if (theme.page_background_url) { %>
+	<style>
+		#content:before {
+			content: '';
+			display: block;
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -2;
+			background: url(<%= theme.page_background_url %>);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			opacity: <% if (theme.page_background_opacity) { %><%= theme.page_background_opacity %><% } else { %>1<% } %>;
+			transition: opacity .5s ease;
+		}
+		html.darkmode #content:before{
+			filter: brightness(0.65);
+		}
+		<% if (theme.page_background_dark_url) { %>
+			#content:after {
+				content: '';
+				display: block;
+				position: fixed;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				z-index: -2;
+				background: url(<%= theme.page_background_dark_url %>);
+				background-position: center;
+				background-size: cover;
+				background-repeat: no-repeat;
+				opacity: 0;
+				transition: opacity .5s ease;
+			}
+			html.darkmode #content:after {
+				opacity: <% if (theme.page_background_opacity) { %><%= theme.page_background_opacity %><% } else { %>1<% } %>;
+			}
+			html.darkmode #content:before {
+				opacity: 0;
+			}
+		<% } %>
+		<% if (theme.page_background_banner_style != '' && theme.page_background_banner_style != false) { %>
+			#banner, #banner .shape {
+				background: transparent !important;
+			}
+		<% } %>
+	</style>
+<% } %>
+<% if (theme.show_toolbar_mask == true) { %>
+	<style>
+		#banner:after {
+			content: '';
+			width: 100vw;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 120px;
+			background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0) 100%);
+			display: block;
+			z-index: -1;
+		}
+		.banner-title {
+			text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+		}
+	</style>
+<% } %>
