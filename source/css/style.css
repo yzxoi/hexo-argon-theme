@@ -743,7 +743,7 @@ body.leftbar-can-headroom.headroom---unpinned #leftbar_part2.sticky{
 	font-size: 13px;
 	color: #525F82;
 }
-.tag.badge {
+.tag.badge .tag-link{
 	font-size: 14px;
 	text-transform: none;
 	transition: background .2s ease;
@@ -752,7 +752,7 @@ body.leftbar-can-headroom.headroom---unpinned #leftbar_part2.sticky{
 	margin-right: 12px;
 	margin-bottom: 15px;
 }
-.tag-num {
+.tag-num .tag-count{
 	font-size: 12px;
 	opacity: .7;
 }
@@ -1837,7 +1837,7 @@ html.darkmode .comment-edit-history-item {
 	font-weight: bold;
 	display: inline-block;
 }
-.comment-edit-history-title .badge {
+.comment-edit-history-title .badge .tag-link {
 	transform: translateY(-3px);
 	margin-left: 8px;
 	display: inline-block;
@@ -3497,7 +3497,7 @@ html.darkmode #fabtn_reading_progress_bar{
 	background: #ccc;
 }
 
-html.darkmode .tag.badge{
+html.darkmode .tag.badge .tag-link{
 	background: #555;
 	color: #eee;
 }
@@ -3575,7 +3575,7 @@ html.darkmode #blog_setting_darkmode_switch .custom-toggle-slider:before {
 	background-color: var(--themecolor);
 }
 
-html.darkmode .badge{
+html.darkmode .badge .tag-link{
 	color: #eee;
 }
 html.darkmode .custom-control-label::before{
@@ -3672,7 +3672,7 @@ html.darkmode.amoled-dark .fabtn{
 html.darkmode.amoled-dark .fabtn:hover{
 	background: #222 !important;
 }
-html.darkmode.amoled-dark .tag.badge{
+html.darkmode.amoled-dark .tag.badge .tag-link{
 	background: #222;
 }
 
@@ -4099,4 +4099,30 @@ html.using-safari #blog_setting_toggle_darkmode_and_amoledarkmode:before ,
 html.using-safari #blog_setting_card_radius_to_default:before{
 	transform: translate3d(-50%, 0, 0) !important;
 	white-space: nowrap;
+}
+.tag-link {
+    font-size: 14px;
+    text-transform: none;
+    transition: background .2s ease;
+    background: #eee;
+    padding: 5px 10px;
+    margin-right: 12px;
+    margin-bottom: 15px;
+    color: #32325d;
+    text-transform: uppercase;
+    background-color: rgba(255,255,255,.5);
+    font-size: 66%;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-block;
+    padding: .35rem .375rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+    border-radius: .25rem;
+}
+.tag-count {
+    font-size: 12px;
+    opacity: .7;
 }

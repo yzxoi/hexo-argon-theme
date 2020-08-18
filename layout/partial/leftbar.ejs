@@ -105,13 +105,13 @@
 									</a>
 								</div>
 								<div class="site-state-item site-state-categories">
-									<a href="/categories">
+									<a data-toggle="modal" data-target="#blog_categories">
 										<span class="site-state-item-count"><%= site.categories.length %></span>
 										<span class="site-state-item-name">分类</span>
 									</a>
 								</div>      
 								<div class="site-state-item site-state-tags">
-									<a href="/tags">
+									<a data-toggle="modal" data-target="#blog_tags">
 										<span class="site-state-item-count"><%= site.tags.length %></span>
 										<span class="site-state-item-name">标签</span>
 									</a>
@@ -141,3 +141,52 @@
 			</div>
 		</div>
 </aside>
+<div class="modal fade" id="blog_categories" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">分类</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<a href=https://yzxoi.top/archives/category/oi class='badge badge-secondary tag'>oi <span class='tag-num'>115</span></a>
+				<%- list_categories(site.categories, {
+					show_count: true,
+				    class: 'tag',
+				    style: 'none',
+				    separator: '►'
+				}) %>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="blog_tags" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"><?php _e('标签', 'argon');?></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<?php
+					$categories = get_categories(array(
+						'child_of' => 0,
+						'orderby' => 'name',
+						'order' => 'ASC',
+						'hide_empty' => 1,
+						'hierarchical' => 0,
+						'taxonomy' => 'post_tag',
+						'pad_counts' => false
+					));
+					foreach($categories as $category) {
+						echo "<a href=" . get_category_link( $category -> term_id ) . " class='badge badge-secondary tag'>" . $category->name . " <span class='tag-num'>" . $category -> count . "</span></a>";
+					}
+				?>
+			</div>
+		</div>
+	</div>
+</div>
