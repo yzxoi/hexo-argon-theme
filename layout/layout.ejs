@@ -6,6 +6,10 @@
     <%- partial('partial/banner') %>
     <div id="content" class="site-content">
     	<div class="page-infomation-card-container"></div>
+    	<% if (is_home()) { %>
+    		<%- partial('partial/archive-post') %>
+    	<% } %>
+    	<%- is_home() %>
     	<%- partial('partial/leftbar') %>
     </div>
     <%- partial('partial/afterfooter') %>

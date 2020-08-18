@@ -1,0 +1,7 @@
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		<% page.posts.each(function(post){ %>
+			<%- partial('article-shot', {post: post, index: true}) %>
+		<% }) %>
+	</main>
+</div>

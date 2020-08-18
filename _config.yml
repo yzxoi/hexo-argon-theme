@@ -6,31 +6,40 @@ banner: "images/banner.jpg"
 banner_title_typing_effect: true
 banner_typing_effect_interval: 
 banner_title: yzxoi
-banner_subtitle: 
+banner_subtitle: Blog
 banner_background_url: 
 page_background_url: https://cdn.jsdelivr.net/gh/yzx1798106406/image@1.2.0/light.webp
 page_background_opacity: 
 page_background_banner_style: 
 page_background_dark_url: 
 show_toolbar_mask: true
+show_headindex_number: true
+
+# npm install hexo-auto-excerpt
+# npm install hexo-wordcount
 # Content
-excerpt_link: Read More
-fancybox: true
-recent_posts_limits: 5
+excerpt: false
 
 # Sidebar
 announcement: 
-sidebar_banner_title: 
+sidebar_banner_title: yzxoi
 sidebar_subtitle: hitokoto
 sidebar_menu:
   <i class="fa fa-home"></i>Home: /
   <i class="fa fa-bookmark"></i>Archives: /archives
-widgets:
-- category
-- tag
-- tagcloud
-- archive
-- recent_posts
+sidebar_auther_image: https://cdn.jsdelivr.net/gh/yzx1798106406/image@1.2.0/yzxoi-500.png
+sidebar_auther_name: yzxoi
+sidebar_auther_links:
+  <i class="fa fa-github"></i> Github: https://github.com/yzx1798106406
+  <i class="fa fa-code"></i> 洛谷: https://www.luogu.org/space/show?uid=37103
+sidebar_friends_links:
+  图论绘图: https://csacademy.com/app/graph_editor/
+  文本比较: https://csacademy.com/app/diffing_tool/
+
+word_count: true
+read_time: true
+read_speed_cn: 
+read_speed_en: 
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
