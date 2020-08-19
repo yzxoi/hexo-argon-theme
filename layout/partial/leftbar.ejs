@@ -28,19 +28,17 @@
 						<% } %>
 					</span>
 				<% } %>
-
 			</div>
 			<ul id="leftbar_part1_menu" class="leftbar-menu">
 				<% for (var i in theme.sidebar_menu){ %>
-					<li class="leftbar-menu-item current">
-					<a href="<%- url_for(theme.menu[i]) %>" target=""><%- i %></a>
+					<li class="leftbar-menu-item">
+					<a href="<%- url_for(theme.sidebar_menu[i]) %>" target=""><%- i %></a>
 					</li>
 				<% } %>
 			</ul>
 			<div class="card-body text-center leftbar-search-button">
-				<button id="leftbar_search_container" class="btn btn-secondary btn-lg active btn-sm btn-block border-0" role="button">
-					<i class="menu-item-icon fa fa-search mr-0"></i>搜索
-					<input id="leftbar_search_input" type="text" placeholder="搜索什么..." class="form-control form-control-alternative" autocomplete="off">
+				<button id="leftbar_search_container" class="btn btn-secondary btn-lg active btn-sm btn-block border-0" role="button" data-toggle="modal" data-target="#search">
+				<i class="menu-item-icon fa fa-search mr-0"></i>搜索
 				</button>
 			</div>
 		</div>
@@ -167,6 +165,26 @@
 			</div>
 			<div class="modal-body">
 				<%- list_tags(site.tags, {class: {a: 'badge badge-secondary tag', count: 'tag-num'}, style: false}) %>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="search" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">搜索</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div id="site_search">
+				   <div class="form-group">
+				    <input type="text" id="local-search-input" name="q" results="0" placeholder="<%= __('search') %>" class="st-search-input st-default-search-input form-control"/>
+				   </div>  
+				  <div id="local-search-result"></div>
+				  </div>
 			</div>
 		</div>
 	</div>
