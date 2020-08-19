@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
-<%- partial('partial/head') %>
+<%- partial('_partial/head') %>
 <body>
-    <%- partial('partial/toolbar') %>
-    <%- partial('partial/banner') %>
-    <%- partial('partial/action-buttons') %>
+    <%- partial('_partial/toolbar') %>
+    <%- partial('_partial/banner') %>
+    <%- partial('_partial/action-buttons') %>
     <div id="content" class="site-content">
     	<div class="page-infomation-card-container"></div>
-    	<%- partial('partial/leftbar') %>
+    	<%- partial('_partial/leftbar') %>
     	<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 		    	<% if (is_home()) { %>
-		    		<%- partial('partial/archive-post') %>
+		    		<%- partial('_partial/archive-post') %>
 		    	<% } %>
-		    	<% if (is_post()) { %>
-		    		<%- partial('partial/post-view') %>
+		    	<% if (is_post() || is_page()) { %>
+		    		<%- partial('_partial/post-view') %>
 		    	<% } %>
-   				<%- partial('partial/footer') %>
+          <% if (is_archive()) { %>
+            <%- partial('_partial/archive') %>
+          <% } %>
+   				<%- partial('_partial/footer') %>
    			</main>
    		</div>
 	</div>
 </body>
-    <%- partial('partial/afterfooter') %>
+    <%- partial('_partial/afterfooter') %>
 </html>
