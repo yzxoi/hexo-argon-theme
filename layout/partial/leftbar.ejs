@@ -30,10 +30,22 @@
 				<% } %>
 			</div>
 			<ul id="leftbar_part1_menu" class="leftbar-menu">
-				<% for (var i in theme.sidebar_menu){ %>
+
+				<% for (var i in theme.sidebar_menu){ 
+					var now=full_url_for(theme.sidebar_menu[i]);
+					if(now[now.length-1]=='/') ;
+					else now+='/';
+					now+='index.html';
+					%>
+					<% if (url == now ) { %>
+					<li class="leftbar-menu-item current">
+					<a href="<%- url_for(theme.sidebar_menu[i]) %>" target=""><%- i %></a>
+					</li>
+					<% } else { %>
 					<li class="leftbar-menu-item">
 					<a href="<%- url_for(theme.sidebar_menu[i]) %>" target=""><%- i %></a>
 					</li>
+					<% } %>
 				<% } %>
 			</ul>
 			<div class="card-body text-center leftbar-search-button">
