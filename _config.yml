@@ -41,6 +41,10 @@ read_time: true
 read_speed_cn: 
 read_speed_en: 
 
+footer_blog_start_time: 2019, 2, 14, 12, 20, 0
+
+footer_html: <div>Copyright © 2019-2020 yzxoi</div>
+
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
 # - category
@@ -57,20 +61,3 @@ favicon: /favicon.png
 color: fa7298
 color_rgb: 250,114,152
 color_origin: fa7298
-
-
-
-# valine comment system. https://valine.js.org
-valine:
-  enable: false # if you want use valine,please set this value is true
-  appId:  # leancloud application app id
-  appKey:  # leancloud application app key
-  notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
-  verify: false # valine verify code (true/false)
-  pageSize: 10 # comment list page size
-  avatar: mm # gravatar style https://valine.js.org/#/avatar
-  lang: zh-cn # i18n: zh-cn/en
-  placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
-  guest_info: nick,mail,link #valine comment header info
-
-version: 0.01

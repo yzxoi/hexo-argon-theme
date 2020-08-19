@@ -1,0 +1,28 @@
+<footer id="footer" class="site-footer card shadow-sm border-0">
+<% if (theme.footer_html) { %>
+    <%- theme.footer_html %>
+<% } %>
+<% if (theme.footer_blog_start_time) { %>
+    <div>博客已运行 <span id="blog_running_days"></span> days , <span id="blog_running_hours"></span> h , <span id="blog_running_mins"></span> m , <span id="blog_running_secs"></span> s</div>
+    <script no-pjax="">
+    var blog_running_days=document.getElementById("blog_running_days");
+    var blog_running_hours=document.getElementById("blog_running_hours");
+    var blog_running_mins=document.getElementById("blog_running_mins");
+    var blog_running_secs=document.getElementById("blog_running_secs");
+    function refresh_blog_running_time(){
+        var time = new Date() - new Date(<%= theme.footer_blog_start_time %>);
+        var d=parseInt(time/24/60/60/1000);
+        var h=parseInt(time%(24*60*60*1000)/60/60/1000);
+        var m=parseInt(time%(60*60*1000)/60/1000);
+        var s=parseInt(time%(60*1000)/1000);
+        blog_running_days.innerHTML=d;
+        blog_running_hours.innerHTML=h;
+        blog_running_mins.innerHTML=m;
+        blog_running_secs.innerHTML=s;
+    }
+    refresh_blog_running_time();
+    setInterval(function(){refresh_blog_running_time();},500);
+    </script>
+<% } %>
+<div>Theme <a href="https://github.com/yzxoi/hexo-argon-theme"><strong>Argon</strong></a></div>
+</footer>

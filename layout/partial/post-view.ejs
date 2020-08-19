@@ -1,0 +1,51 @@
+<article class="post card bg-white shadow-sm border-0 post-preview" id="post-<%= page.path %>" class="post-<%= page.path %> post type-post status-publish format-standard hentry">
+	<header class="post-header text-center">
+		<a class="post-title" href="<%= url_for(page.path) %>"><%= page.title %></a>
+		<div class="post-meta">
+			<div class="post-meta-detail post-meta-detail-time">
+				<i class="fa fa-clock-o" aria-hidden="true"></i>
+					<time title="发布于 <%- full_date(page.date, 'YYYY-M-D H:m:s') %> | 编辑于 <%- full_date(page.updated, 'YYYY-M-D H:m:s') %>"><%- full_date(page.date, 'YYYY-M-D H:m') %>
+					</time>
+				</div>
+				<div class="post-meta-devide">|</div>
+				<% if (theme.word_count) { %>
+					<div class="post-meta-detail post-meta-detail-words">
+					<i class="fa fa-file-word-o" aria-hidden="true"></i>
+						<%= wordcount(page.content) %>
+					</div>
+					<div class="post-meta-devide">|</div>
+				<% } %>
+				<% if (theme.read_time) { %>
+					<div class="post-meta-detail post-meta-detail-words">
+						<i class="fa fa-hourglass-end" aria-hidden="true"></i>
+						<% if (theme.read_speed_cn && theme.read_speed_en) { %>
+							<%= min2read(page.content, {cn: theme.read_speed_cn, en: theme.read_speed_en}) %>
+						<% } else { %>
+							<%= min2read(page.content) %>
+						<% } %>
+					</div>
+					<div class="post-meta-devide">|</div>
+				<% } %>
+				<% if (page.categories.length) { %>
+				<div class="post-meta-detail post-meta-detail-categories">
+				<i class="fa fa-bookmark-o" aria-hidden="true"></i>
+				<%- list_categories(post.categories, {
+			      show_count: false,
+			      class: 'post-meta-detail-catagory',
+			      style: 'none',
+			      separator: '►'
+			    }) %>
+				<div class="post-meta-devide">|</div>
+				<% } %>
+				<div class="post-meta-detail post-meta-detail-time">
+					<i class="fa fa-clock-o" aria-hidden="true"></i>
+					<time title="发布于 <%- full_date(page.date, 'YYYY-M-D H:m:s') %> | 编辑于 <%- full_date(page.updated, 'YYYY-M-D H:m:s') %>"><%- full_date(page.updated, 'YYYY-M-D H:m') %>
+					</time>
+				</div>
+				
+		</div>
+	</header>
+	<div class="post-content" id="post_content">
+	<%- page.content %>
+	</div>
+</article>

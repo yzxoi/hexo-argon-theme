@@ -151,13 +151,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<a href=https://yzxoi.top/archives/category/oi class='badge badge-secondary tag'>oi <span class='tag-num'>115</span></a>
-				<%- list_categories(site.categories, {
-					show_count: true,
-				    class: 'tag',
-				    style: 'none',
-				    separator: '►'
-				}) %>
+				<%- list_tags(site.categories, {class: {a: 'badge badge-secondary tag', count: 'tag-num'}, style: false}) %>
 			</div>
 		</div>
 	</div>
@@ -166,27 +160,19 @@
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title"><?php _e('标签', 'argon');?></h5>
+				<h5 class="modal-title">标签</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				<?php
-					$categories = get_categories(array(
-						'child_of' => 0,
-						'orderby' => 'name',
-						'order' => 'ASC',
-						'hide_empty' => 1,
-						'hierarchical' => 0,
-						'taxonomy' => 'post_tag',
-						'pad_counts' => false
-					));
-					foreach($categories as $category) {
-						echo "<a href=" . get_category_link( $category -> term_id ) . " class='badge badge-secondary tag'>" . $category->name . " <span class='tag-num'>" . $category -> count . "</span></a>";
-					}
-				?>
+				<%- list_tags(site.tags, {class: {a: 'badge badge-secondary tag', count: 'tag-num'}, style: false}) %>
 			</div>
 		</div>
 	</div>
 </div>
+<style>
+span.tag-num:before {
+	content: "\00a0"
+}
+</style>
