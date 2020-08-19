@@ -43,6 +43,15 @@ read_time: true
 read_speed_cn: 
 read_speed_en: 
 
+#gitalk settings
+gitalk:
+  enable: true #用来做启用判断可以不用
+  owner: yzxoi #Github 用户名,
+  repo: hexo-comment #储存评论issue的github仓库名
+  admin: yzxoi #Github 用户名,
+  clientID: 7b5017a0d5d525d33820 #`Github Application clientID`
+  clientSecret: 587e8612a778edc81f5ae0e76acdeb8940ad9098 #`Github Application clientSecret`
+
 footer_blog_start_time: 2019, 2, 14, 12, 20, 0
 
 footer_html: <div>Copyright © 2019-2020 yzxoi</div>
