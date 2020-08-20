@@ -49,7 +49,7 @@ donate: https://cdn.jsdelivr.net/gh/yzx1798106406/image@1.2.1/pay.png
 gitalk:
   enable: true #用来做启用判断可以不用
   owner: yzxoi #Github 用户名,
-  repo: hexo-comment #储存评论issue的github仓库名
+  repo: yzxoi.github.io #储存评论issue的github仓库名
   admin: yzxoi #Github 用户名,
   clientID: 7b5017a0d5d525d33820 #`Github Application clientID`
   clientSecret: 587e8612a778edc81f5ae0e76acdeb8940ad9098 #`Github Application clientSecret`
