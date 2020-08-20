@@ -48,6 +48,25 @@
 	<div class="post-content" id="post_content">
 	<%- page.content %>
 	</div>
+	<% if (theme.donate) { %>
+	<div class="post-donate">
+		<button class="btn donate-btn btn-danger">赞赏</button>
+		<div class="donate-qrcode card shadow-sm bg-white">
+			<img src="<%= theme.donate %>" class="zoomify">
+		</div>
+	</div>
+	<% } %>
+	<% if (page.tags.length) { %>
+		<div class="post-tags">
+			<i class="fa fa-tags" aria-hidden="true"></i>
+			<%- list_tags(page.tags, {
+		      show_count: false,
+		      class: 'tag badge badge-secondary post-meta-detail-tag tag',
+		      style: 'none',
+		      separator: '►'
+		    }) %>
+		</div>
+	<% } %>
 </article>
 <div id="share_container">
 	<div id="share" data-initialized="true">

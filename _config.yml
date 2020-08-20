@@ -43,6 +43,8 @@ read_time: true
 read_speed_cn: 
 read_speed_en: 
 
+donate: https://cdn.jsdelivr.net/gh/yzx1798106406/image@1.2.1/pay.png
+
 #gitalk settings
 gitalk:
   enable: true #用来做启用判断可以不用
